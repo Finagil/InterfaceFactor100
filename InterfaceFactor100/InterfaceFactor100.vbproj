@@ -13,6 +13,21 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +66,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -72,11 +88,45 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Factor100DS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Factor100DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientesConMC.Designer.vb">
+      <DependentUpon>FrmClientesConMC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientesConMC.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="FrmInterface.Designer.vb">
+      <DependentUpon>FrmInterface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInterface.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSolicitudProcesada.Designer.vb">
+      <DependentUpon>FrmSolicitudProcesada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSolicitudProcesada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSolicitudConError.Designer.vb">
+      <DependentUpon>FrmSolicitudConError.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSolicitudConError.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProcesarSolicitud.Designer.vb">
+      <DependentUpon>FrmProcesarSolicitud.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProcesarSolicitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIform.Designer.vb">
+      <DependentUpon>MDIform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDIform.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -94,8 +144,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ProductionDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductionDS.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmClientesConMC.resx">
+      <DependentUpon>FrmClientesConMC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInterface.resx">
+      <DependentUpon>FrmInterface.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSolicitudProcesada.resx">
+      <DependentUpon>FrmSolicitudProcesada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSolicitudConError.resx">
+      <DependentUpon>FrmSolicitudConError.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProcesarSolicitud.resx">
+      <DependentUpon>FrmProcesarSolicitud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIform.resx">
+      <DependentUpon>MDIform.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -104,6 +177,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Factor100DS.xsc">
+      <DependentUpon>Factor100DS.xsd</DependentUpon>
+    </None>
+    <None Include="Factor100DS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Factor100DS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Factor100DS.xss">
+      <DependentUpon>Factor100DS.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -114,6 +198,24 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="ProductionDS.xsc">
+      <DependentUpon>ProductionDS.xsd</DependentUpon>
+    </None>
+    <None Include="ProductionDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductionDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ProductionDS.xss">
+      <DependentUpon>ProductionDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
