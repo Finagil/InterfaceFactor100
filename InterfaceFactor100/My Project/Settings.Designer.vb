@@ -75,6 +75,17 @@ Namespace My
                 Return CType(Me("Factor100ConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=server-raid2;Initial Catalog=Production;Persist Security Info=True;Us"& _ 
+            "er ID=User_PRO;Password=User_PRO2015")>  _
+        Public ReadOnly Property ConnectionString() As String
+            Get
+                Return CType(Me("ConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

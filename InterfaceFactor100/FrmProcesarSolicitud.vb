@@ -1,7 +1,7 @@
 ﻿Public Class FrmProcesarSolicitud
     Private Sub FrmProcesarSolicitud_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.PagosFactor100TableAdapter.UpdateMoneda()
-        Me.Vw_PagosTableAdapter.FillByEstatus(Me.Factor100DS.Vw_Pagos, "VoboMC")
+        Me.Vw_PagosTableAdapter.Fill(Me.Factor100DS.Vw_Pagos, "VoboMC")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -18,7 +18,7 @@
             Me.VwPagosBindingSource.Current("Importe") = CDec(TextImporte.Text).ToString("n2")
             Me.PagosFactor100TableAdapter.UpdateImporte(TextImporte.Text, Me.VwPagosBindingSource.Current("id"))
             MessageBox.Show("Cambio realizado", "Cambio de Importe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.Vw_PagosTableAdapter.FillByEstatus(Me.Factor100DS.Vw_Pagos, "Pendiente")
+            Me.Vw_PagosTableAdapter.Fill(Me.Factor100DS.Vw_Pagos, "Pendiente")
         End If
     End Sub
 
@@ -46,6 +46,8 @@
             End If
             Me.VwPagosBindingSource.MoveNext()
         Next
-        Me.Vw_PagosTableAdapter.FillByEstatus(Me.Factor100DS.Vw_Pagos, "VoboMC")
+        Inserta_CXP_MOVS_FACT()
+        MessageBox.Show("Proceso Terminado", "Factoraje CXP ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Me.Vw_PagosTableAdapter.Fill(Me.Factor100DS.Vw_Pagos, "VoboMC")
     End Sub
 End Class

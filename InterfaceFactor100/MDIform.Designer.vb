@@ -26,8 +26,10 @@ Partial Class MDIform
         Me.CatalogosClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesConAutorizaciónMCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InterfaceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProcesarSolicitudesFactor100CXPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProcesarPagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagosPendientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CancelarSolicitudToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagosPRocesadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
@@ -57,27 +59,39 @@ Partial Class MDIform
         '
         'InterfaceToolStripMenuItem
         '
-        Me.InterfaceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProcesarPagosToolStripMenuItem, Me.PagosPendientesToolStripMenuItem, Me.PagosPRocesadosToolStripMenuItem})
+        Me.InterfaceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProcesarSolicitudesFactor100CXPToolStripMenuItem, Me.ProcesarPagosToolStripMenuItem, Me.PagosPendientesToolStripMenuItem, Me.CancelarSolicitudToolStripMenuItem, Me.PagosPRocesadosToolStripMenuItem})
         Me.InterfaceToolStripMenuItem.Name = "InterfaceToolStripMenuItem"
         Me.InterfaceToolStripMenuItem.Size = New System.Drawing.Size(79, 20)
         Me.InterfaceToolStripMenuItem.Text = "Solicitudes "
         '
+        'ProcesarSolicitudesFactor100CXPToolStripMenuItem
+        '
+        Me.ProcesarSolicitudesFactor100CXPToolStripMenuItem.Name = "ProcesarSolicitudesFactor100CXPToolStripMenuItem"
+        Me.ProcesarSolicitudesFactor100CXPToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.ProcesarSolicitudesFactor100CXPToolStripMenuItem.Text = "Procesar Solicitudes Factor100 - CXP"
+        '
         'ProcesarPagosToolStripMenuItem
         '
         Me.ProcesarPagosToolStripMenuItem.Name = "ProcesarPagosToolStripMenuItem"
-        Me.ProcesarPagosToolStripMenuItem.Size = New System.Drawing.Size(265, 22)
+        Me.ProcesarPagosToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
         Me.ProcesarPagosToolStripMenuItem.Text = "Procesar Solicitud para MC"
         '
         'PagosPendientesToolStripMenuItem
         '
         Me.PagosPendientesToolStripMenuItem.Name = "PagosPendientesToolStripMenuItem"
-        Me.PagosPendientesToolStripMenuItem.Size = New System.Drawing.Size(265, 22)
+        Me.PagosPendientesToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
         Me.PagosPendientesToolStripMenuItem.Text = "Solicitudes con Error En Cuenta"
+        '
+        'CancelarSolicitudToolStripMenuItem
+        '
+        Me.CancelarSolicitudToolStripMenuItem.Name = "CancelarSolicitudToolStripMenuItem"
+        Me.CancelarSolicitudToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.CancelarSolicitudToolStripMenuItem.Text = "Cancelar Solicitud"
         '
         'PagosPRocesadosToolStripMenuItem
         '
         Me.PagosPRocesadosToolStripMenuItem.Name = "PagosPRocesadosToolStripMenuItem"
-        Me.PagosPRocesadosToolStripMenuItem.Size = New System.Drawing.Size(265, 22)
+        Me.PagosPRocesadosToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
         Me.PagosPRocesadosToolStripMenuItem.Text = "Solicitudes Procesadas y Canceladas"
         '
         'SalirToolStripMenuItem
@@ -113,4 +127,6 @@ Partial Class MDIform
     Friend WithEvents ProcesarPagosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PagosPendientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PagosPRocesadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProcesarSolicitudesFactor100CXPToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CancelarSolicitudToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -34,4 +34,18 @@
         f.MdiParent = Me
         f.Show()
     End Sub
+
+    Private Sub ProcesarSolicitudesFactor100CXPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProcesarSolicitudesFactor100CXPToolStripMenuItem.Click
+        Dim f As New FrmSolicitudNuevas
+        f.WindowState = FormWindowState.Maximized
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub CancelarSolicitudToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CancelarSolicitudToolStripMenuItem.Click
+        Dim f As New FrmSolicitudCancelar
+        f.WindowState = FormWindowState.Maximized
+        f.MdiParent = Me
+        f.Show()
+    End Sub
 End Class

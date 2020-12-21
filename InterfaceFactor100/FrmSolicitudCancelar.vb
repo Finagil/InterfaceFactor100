@@ -1,7 +1,7 @@
-﻿Public Class FrmSolicitudConError
+﻿Public Class FrmSolicitudCancelar
     Private Sub FrmProcesarSolicitud_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.PagosFactor100TableAdapter.UpdateMoneda()
-        Me.Vw_PagosTableAdapter.FillByErrorEnCuenta(Me.Factor100DS.Vw_Pagos)
+        Me.Vw_PagosTableAdapter.FillByEnProceso(Me.Factor100DS.Vw_Pagos)
     End Sub
 
     Private Sub CheckALL_CheckedChanged(sender As Object, e As EventArgs) Handles CheckALL.CheckedChanged
@@ -24,21 +24,10 @@
         Me.VwPagosBindingSource.MoveFirst()
         For Each Fila As DataGridViewRow In DataGridPAgos.Rows
             If Fila.Cells("Procesar").Value = True Then
-                Select Case Me.VwPagosBindingSource.Current("Estatus")
-                    Case "ErrorEnCuenta"
-                        Me.PagosFactor100TableAdapter.UpdateEstatus("Pendiente", Me.VwPagosBindingSource.Current("id"))
-                    Case "ErrorEnCuentaMC"
-                        Me.PagosFactor100TableAdapter.UpdateEstatus("MesaControl", Me.VwPagosBindingSource.Current("id"))
-                    Case "ErrorEnCuentaAutMC2"
-                        Me.PagosFactor100TableAdapter.UpdateEstatus("AutorizadoMC", Me.VwPagosBindingSource.Current("id"))
-                    Case Else
-                        Me.PagosFactor100TableAdapter.UpdateEstatus("Pendiente", Me.VwPagosBindingSource.Current("id"))
-                End Select
+                Me.PagosFactor100TableAdapter.UpdateEstatus("CANCELADO", Me.VwPagosBindingSource.Current("id"))
             End If
             Me.VwPagosBindingSource.MoveNext()
         Next
-        Inserta_CXP_MOVS_FACT()
-        MessageBox.Show("Proceso Terminado", "Factoraje CXP ", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Me.Vw_PagosTableAdapter.FillByErrorEnCuenta(Me.Factor100DS.Vw_Pagos)
+        Me.Vw_PagosTableAdapter.FillByEnProceso(Me.Factor100DS.Vw_Pagos)
     End Sub
 End Class
