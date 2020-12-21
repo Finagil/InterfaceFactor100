@@ -26,6 +26,12 @@ Partial Class FrmSolicitudNuevas
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridPAgos = New System.Windows.Forms.DataGridView()
+        Me.VwPagosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Factor100DS = New InterfaceFactor100.Factor100DS()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Vw_PagosTableAdapter = New InterfaceFactor100.Factor100DSTableAdapters.Vw_PagosTableAdapter()
+        Me.PagosFactor100TableAdapter = New InterfaceFactor100.Factor100DSTableAdapters.PagosFactor100TableAdapter()
         Me.ClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CL_NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImporteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -33,14 +39,7 @@ Partial Class FrmSolicitudNuevas
         Me.RfcDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClabeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Procesar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.VwPagosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Factor100DS = New InterfaceFactor100.Factor100DS()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.CheckALL = New System.Windows.Forms.CheckBox()
-        Me.Vw_PagosTableAdapter = New InterfaceFactor100.Factor100DSTableAdapters.Vw_PagosTableAdapter()
-        Me.PagosFactor100TableAdapter = New InterfaceFactor100.Factor100DSTableAdapters.PagosFactor100TableAdapter()
+        Me.estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridPAgos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VwPagosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Factor100DS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,13 +51,50 @@ Partial Class FrmSolicitudNuevas
         Me.DataGridPAgos.AllowUserToDeleteRows = False
         Me.DataGridPAgos.AutoGenerateColumns = False
         Me.DataGridPAgos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridPAgos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClienteDataGridViewTextBoxColumn, Me.CL_NOMBRE, Me.ImporteDataGridViewTextBoxColumn, Me.moneda, Me.RfcDataGridViewTextBoxColumn, Me.ClabeDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn, Me.Procesar})
+        Me.DataGridPAgos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClienteDataGridViewTextBoxColumn, Me.CL_NOMBRE, Me.ImporteDataGridViewTextBoxColumn, Me.moneda, Me.RfcDataGridViewTextBoxColumn, Me.ClabeDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn, Me.estatus})
         Me.DataGridPAgos.DataSource = Me.VwPagosBindingSource
         Me.DataGridPAgos.Location = New System.Drawing.Point(12, 27)
         Me.DataGridPAgos.Name = "DataGridPAgos"
+        Me.DataGridPAgos.ReadOnly = True
         Me.DataGridPAgos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridPAgos.Size = New System.Drawing.Size(930, 296)
         Me.DataGridPAgos.TabIndex = 0
+        '
+        'VwPagosBindingSource
+        '
+        Me.VwPagosBindingSource.DataMember = "Vw_Pagos"
+        Me.VwPagosBindingSource.DataSource = Me.Factor100DS
+        '
+        'Factor100DS
+        '
+        Me.Factor100DS.DataSetName = "Factor100DS"
+        Me.Factor100DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 8)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(58, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Solicitudes"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(841, 331)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(101, 36)
+        Me.Button2.TabIndex = 7
+        Me.Button2.Text = "Procesar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Vw_PagosTableAdapter
+        '
+        Me.Vw_PagosTableAdapter.ClearBeforeFill = True
+        '
+        'PagosFactor100TableAdapter
+        '
+        Me.PagosFactor100TableAdapter.ClearBeforeFill = True
         '
         'ClienteDataGridViewTextBoxColumn
         '
@@ -119,65 +155,19 @@ Partial Class FrmSolicitudNuevas
         Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
         Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'Procesar
+        'estatus
         '
-        Me.Procesar.HeaderText = "Procesar"
-        Me.Procesar.Name = "Procesar"
-        Me.Procesar.Width = 80
-        '
-        'VwPagosBindingSource
-        '
-        Me.VwPagosBindingSource.DataMember = "Vw_Pagos"
-        Me.VwPagosBindingSource.DataSource = Me.Factor100DS
-        '
-        'Factor100DS
-        '
-        Me.Factor100DS.DataSetName = "Factor100DS"
-        Me.Factor100DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 8)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Solicitudes"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(841, 331)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(101, 36)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Procesar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'CheckALL
-        '
-        Me.CheckALL.AutoSize = True
-        Me.CheckALL.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.CheckALL.Location = New System.Drawing.Point(857, 7)
-        Me.CheckALL.Name = "CheckALL"
-        Me.CheckALL.Size = New System.Drawing.Size(51, 17)
-        Me.CheckALL.TabIndex = 8
-        Me.CheckALL.Text = "Todo"
-        Me.CheckALL.UseVisualStyleBackColor = True
-        '
-        'Vw_PagosTableAdapter
-        '
-        Me.Vw_PagosTableAdapter.ClearBeforeFill = True
-        '
-        'PagosFactor100TableAdapter
-        '
-        Me.PagosFactor100TableAdapter.ClearBeforeFill = True
+        Me.estatus.DataPropertyName = "estatus"
+        Me.estatus.HeaderText = "Estatus"
+        Me.estatus.Name = "estatus"
+        Me.estatus.ReadOnly = True
+        Me.estatus.Width = 80
         '
         'FrmSolicitudNuevas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(949, 375)
-        Me.Controls.Add(Me.CheckALL)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridPAgos)
@@ -198,7 +188,6 @@ Partial Class FrmSolicitudNuevas
     Friend WithEvents Vw_PagosTableAdapter As Factor100DSTableAdapters.Vw_PagosTableAdapter
     Friend WithEvents PagosFactor100TableAdapter As Factor100DSTableAdapters.PagosFactor100TableAdapter
     Friend WithEvents Button2 As Button
-    Friend WithEvents CheckALL As CheckBox
     Friend WithEvents NOMBREDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CL_NOMBRE As DataGridViewTextBoxColumn
@@ -207,5 +196,5 @@ Partial Class FrmSolicitudNuevas
     Friend WithEvents RfcDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ClabeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Procesar As DataGridViewCheckBoxColumn
+    Friend WithEvents estatus As DataGridViewTextBoxColumn
 End Class

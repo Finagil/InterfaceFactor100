@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:CO_CLIEN" ZOrder="3" X="30" Y="29" Height="191" Width="201" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:PagosFactor100" ZOrder="2" X="289" Y="39" Height="305" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
-    <Shape ID="DesignTable:Vw_Pagos" ZOrder="1" X="580" Y="20" Height="343" Width="294" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:Vw_Pagos" ZOrder="1" X="580" Y="20" Height="400" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
