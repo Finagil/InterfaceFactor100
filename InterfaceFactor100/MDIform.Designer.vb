@@ -32,6 +32,7 @@ Partial Class MDIform
         Me.CancelarSolicitudToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagosPRocesadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComprobantesBancariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,7 +60,7 @@ Partial Class MDIform
         '
         'InterfaceToolStripMenuItem
         '
-        Me.InterfaceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProcesarSolicitudesFactor100CXPToolStripMenuItem, Me.ProcesarPagosToolStripMenuItem, Me.PagosPendientesToolStripMenuItem, Me.CancelarSolicitudToolStripMenuItem, Me.PagosPRocesadosToolStripMenuItem})
+        Me.InterfaceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProcesarSolicitudesFactor100CXPToolStripMenuItem, Me.ProcesarPagosToolStripMenuItem, Me.PagosPendientesToolStripMenuItem, Me.CancelarSolicitudToolStripMenuItem, Me.PagosPRocesadosToolStripMenuItem, Me.ComprobantesBancariosToolStripMenuItem})
         Me.InterfaceToolStripMenuItem.Name = "InterfaceToolStripMenuItem"
         Me.InterfaceToolStripMenuItem.Size = New System.Drawing.Size(79, 20)
         Me.InterfaceToolStripMenuItem.Text = "Solicitudes "
@@ -100,6 +101,12 @@ Partial Class MDIform
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
+        'ComprobantesBancariosToolStripMenuItem
+        '
+        Me.ComprobantesBancariosToolStripMenuItem.Name = "ComprobantesBancariosToolStripMenuItem"
+        Me.ComprobantesBancariosToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.ComprobantesBancariosToolStripMenuItem.Text = "Comprobantes Bancarios"
+        '
         'MDIform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -129,4 +136,5 @@ Partial Class MDIform
     Friend WithEvents PagosPRocesadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProcesarSolicitudesFactor100CXPToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CancelarSolicitudToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ComprobantesBancariosToolStripMenuItem As ToolStripMenuItem
 End Class

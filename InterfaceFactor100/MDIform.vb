@@ -48,4 +48,11 @@
         f.MdiParent = Me
         f.Show()
     End Sub
+
+    Private Sub ComprobantesBancariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprobantesBancariosToolStripMenuItem.Click
+        Dim f As New FrmComprobantes
+        f.WindowState = FormWindowState.Maximized
+        f.MdiParent = Me
+        f.Show()
+    End Sub
 End Class

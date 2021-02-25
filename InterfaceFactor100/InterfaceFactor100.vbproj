@@ -104,6 +104,12 @@
     <Compile Include="FrmClientesConMC.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmComprobantes.Designer.vb">
+      <DependentUpon>FrmComprobantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmComprobantes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmSolicitudCancelar.Designer.vb">
       <DependentUpon>FrmSolicitudCancelar.vb</DependentUpon>
     </Compile>
@@ -165,6 +171,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmClientesConMC.resx">
       <DependentUpon>FrmClientesConMC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmComprobantes.resx">
+      <DependentUpon>FrmComprobantes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSolicitudCancelar.resx">
       <DependentUpon>FrmSolicitudCancelar.vb</DependentUpon>
